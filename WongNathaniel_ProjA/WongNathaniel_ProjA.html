@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BouncyBall09b.PartSys</title>
+  </head>
+	<!--	Create the HTML5 'canvas' element in which we will run WebGL
+	-->
+  <body onload="main()">
+    <canvas id="webgl" width="600" height="600">
+    	Please use a browser that supports "canvas"
+    </canvas>
+	<br>
+	<b>Controls:</b>
+  <b>W,A,S,D:</b> Pan the camera<br>
+  <b>Arrow Keys:</b> Move/strafe camera<br>
+  <b>R:</b> run.
+  <b>T:</b> reset.
+  <b>Space:</b> single-step.
+  <b>P:</b> pause/resume.
+  <b>Q:</b> switch solvers
+  <br>
+	<p>
+		<div id='KeyResult'></div>
+		<div id='MouseResult0'></div>
+		<div id='MouseResult1'></div>
+  </p>
+	<!--	Load in the JavaScript libraries supplied by our textbook
+			(Matsuda et al., 2013 WebGL Programming Guide) that help us
+			with WebGL programming:
+	-->
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+	<!-- We modified the library cuon-matrix.js from the book
+		"WebGL Programming Guide"(K. Matsuda, 2013),
+		to add matrix-stack and quaternion capabilities,
+		and renamed it cuon-matrix-quat.js -->
+    <script src="../lib/cuon-matrix-quat03.js"></script>
+	<!--	Finally, load in our own JavaScript program files:
+	-->
+    <script src="CForcer.js"></script>
+    <script src="CLimit.js"></script>
+    <script src="CPart.js"></script>
+		<script src="CPartSys.js"></script>
+    <script src="WongNathaniel_ProjA.js"></script>
+  </body>
+</html>

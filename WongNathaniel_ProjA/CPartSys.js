@@ -631,10 +631,15 @@ PartSys.prototype.render = function() {
           this.getVBO(this.s0)); // Float32Array data source.
 
   // Draw our VBO's new contents:
-  var primitive = (this.sysType == SYS_GROUND_GRID) ? gl.LINES: gl.POINTS;
-  gl.drawArrays(primitive,          // mode: WebGL drawing primitive to use
-                0,                  // index: start at this vertex in the VBO;
-                this.partCount);    // draw this many vertices.
+  //var primitive = (this.sysType == SYS_GROUND_GRID) ? gl.LINES: gl.POINTS;
+  //gl.drawArrays(primitive,          // mode: WebGL drawing primitive to use
+   //             0,                  // index: start at this vertex in the VBO;
+    //            this.partCount);    // draw this many vertices.
+  if (this.sysType == SYS_GROUND_GRID) {
+    gl.drawArrays(gl.LINES, 0, this.partCount);
+  } else {
+	  gl.drawArrays(gl.POINTS, 0, this.partCount);
+  }
 }
 
 PartSys.prototype.solver = function() {
